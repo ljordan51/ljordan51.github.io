@@ -1,0 +1,310 @@
+$primary: #1c919a;
+$primary-low-opacity: rgba(28, 145, 154, 0.3);
+$secondary: #ee3371;
+$secondary-medium-opacity: rgba(238, 51, 113, 0.8);
+$secondary-dark: #000000;
+// bootstrap breakpoints
+// sm 576px, md 768px, lg 992px, xl 1200px
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// Utils
+.no-border {
+  border: none;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+// Bootstrap supplements
+.card-deck-xl .card {
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width:$sm) {
+  .d-sm-initial {
+    display: initial !important;
+  }
+}
+
+@media screen and (min-width:$md) {
+  .d-md-initial {
+    display: initial !important;
+  }
+}
+
+@media screen and (min-width:$lg) {
+  .d-lg-initial {
+    display: initial !important;
+  }
+}
+
+@media screen and (min-width:$xl) {
+  .d-xl-initial {
+    display: initial !important;
+  }
+  .card-deck-xl {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .card-deck-xl .card {
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
+    margin-right: 15px;
+    margin-bottom: 0;
+    margin-left: 15px;
+  }
+}
+
+// Backgrounds
+.background-primary {
+  background-color: $primary;
+}
+
+.background-primary-low-opacity {
+  background-color: $primary-low-opacity;
+}
+
+.background-secondary {
+  background-color: $secondary;
+}
+
+// Buttons
+.btn-primary, .btn-secondary:hover {
+  background-color: $primary;
+}
+
+.btn-secondary, .btn-secondary:active, .btn-secondary:focus {
+  background-color: $secondary;
+  box-shadow: none;
+  @extend .no-border;
+}
+
+// Text
+.text-primary {
+  color: $primary !important;
+}
+
+.text-secondary {
+  color: $secondary !important;
+}
+
+.weight-100 {
+  font-weight: 100;
+}
+
+// Links
+a, a:hover, a:active, a:focus {
+  color: $secondary;
+}
+
+// Landing page
+.landing-page-container {
+  @extend .full-height;
+}
+
+.landing-page-name {
+  @extend .text-secondary;
+  @extend .weight-100;
+  font-size: calc(13px + 8vw);
+  letter-spacing: 1vw;
+}
+
+.landing-page-link-container {
+  @extend .full-width;
+}
+
+.landing-page-link-container h1, .landing-page-link-container a {
+  @extend .text-secondary;
+  @extend .weight-100;
+  margin: 1rem;
+  font-size: calc(12px + 3vw);
+}
+
+@media screen and (min-width:$lg) {
+  .landing-page-name{ font-size: 140px; }
+  .landing-page-link-container h1, .landing-page-link-container a {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width:940px) and (max-width:1140px) {
+  .landing-page-name{ font-size: 100px; }
+}
+
+// Header and Nav
+.header {
+  @extend .full-width;
+  margin: 0 !important;
+  padding: 1rem;
+  transition: background 150ms ease-in-out;
+}
+
+.header h1, .header a {
+  @extend .text-secondary;
+  @extend .weight-100;
+  transition: color 150ms ease-in-out;
+}
+
+@media screen and (max-width:$lg) { .header h1 { font-size: 2rem; } }
+@media screen and (max-width:$md) { .header h1 { font-size: 1.4rem; } }
+@media screen and (max-width:$sm) { .header.navbar h1 { font-size: 1rem; } }
+
+.top-margin-adjust {
+  margin-top: 4rem;
+}
+
+.scrolled {
+  background-color: $secondary-medium-opacity;
+}
+
+.scrolled h1, .scrolled a {
+  color: white !important;
+}
+
+.navbar-dark > .navbar-toggler {
+  @extend .background-primary;
+}
+
+.navbar-dark > .navbar-toggler:focus, .navbar-dark > .navbar-toggler:active {
+  border: none;
+  outline: none;
+}
+
+.navbar > h1 {
+  margin-bottom: 0;
+}
+
+a.nav-link {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.nav-link.active {
+  color: $secondary-dark !important;
+}
+
+// Cards
+.card {
+  width: 100%;
+  transition: box-shadow 150ms ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.card-img-top {
+  max-height: 30vh;
+  object-fit: cover;
+  object-position: left top;
+}
+
+@media screen and (min-width:1600px) {
+  .card-img-top{ max-height: 35vh; }
+}
+
+.card-footer {
+  background-color: transparent;
+  // display: none;
+}
+
+// Content Pages
+// Sections
+$content-padding-top: 5vh;
+
+.main {
+  margin-top: calc(5rem - #{$content-padding-top});
+  padding-bottom: 20px;
+}
+
+.section {
+  padding-top: 5rem;
+  margin-top: -5rem;
+}
+
+.content {
+  padding-top: $content-padding-top;
+}
+
+#user-testing > .content > h2, #user-testing > .content > h3 {
+  padding-top: calc(5rem + 25px);
+  margin-top: -5rem;
+}
+
+.back-to-overview {
+  font-size: 50%;
+}
+
+#back-to-top {
+  padding: 1vw;
+}
+
+#back-to-top > a {
+  color: white !important;
+  @extend .background-primary;
+  padding: 0.5vw 1vw;
+}
+
+.text-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 500px;
+  padding-top: 20px;
+  flex-direction: column;
+}
+
+@media screen and (min-width:$md) {
+  .text-image {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.text-image > .text {
+  padding: 0 20px 0 0;
+}
+
+.text-image > img {
+  max-height: 500px;
+}
+
+// Carousel
+.carousel-indicators li {
+  @extend .background-secondary;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: 5%;
+}
+
+.carousel-item > .text-image {
+  margin: 5%;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  height: 110px;
+}
+
+.carousel-control-prev-icon {
+  background-image: url(../../media/objects/carousel-prev-arrow-secondary.svg);
+}
+
+.carousel-control-next-icon {
+  background-image: url(../../media/objects/carousel-next-arrow-secondary.svg);
+}

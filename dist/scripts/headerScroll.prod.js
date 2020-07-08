@@ -1,0 +1,1 @@
+"use strict";$(document).scroll(function(){5<$(document).scrollTop()?$("#navbar").addClass("scrolled"):$("#navbarsExampleDefault").hasClass("show")||$("#navbar").removeClass("scrolled")}),$("#hamburglar").click(function(){$("#navbarsExampleDefault").hasClass("show")?$(document).scrollTop()<5&&$("#navbar").removeClass("scrolled"):$("#navbar").addClass("scrolled")});

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucky Jordan</title>
+  <link rel="stylesheet" href="../dist/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="../dist/styles/main.min.css">
+</head>
+
+<body class="background-primary-low-opacity" data-spy="scroll" data-target="#navbar" data-offset="100">
+  <nav id="navbar"
+    class="header navbar navbar-expand-xl navbar-dark fixed-top align-items-center justify-content-center">
+    <button id="hamburglar" class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <h1 class="order-xl-0 ml-3 ml-xl-0 mr-auto"><a href="../index.html">LUCKY JORDAN</a></h1>
+
+    <h1 class="order-xl-2"><a href="../index.html">Home</a> > <a href="../design.html">Design</a> > <a href="#">Air
+        Partners</a></h1>
+
+    <div class="order-xl-1 collapse navbar-collapse ml-auto mr-auto" id="navbarsExampleDefault">
+      <ul class="navbar-nav ml-auto mr-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#user-testing">User testing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#redesign">Redesign</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <div id="back-to-top" class="fixed-bottom d-flex"><a href="#" class="">Back to top</a></div>
+
+  <main role="main" class="container-xl main">
+
+    <div id="user-testing" class="section">
+      <div class="content">
+        <h1>User Testing</h1>
+
+        <h2 id="process-overview">Process</h2>
+        <ul>
+          <li><a href="#past-design-work">Evaluate and rapidly iterate on past design work</a></li>
+          <li><a href="#wizard-of-oz">Wizard of Oz user testing with paper prototypes</a></li>
+          <li><a href="#virtual-testing">Virtual user testing with automated wireframes</a></li>
+          <li><a href="#personas-and-requirements">Finalize personas and define UI requirements</a></li>
+        </ul>
+
+        <h3 id="past-design-work">
+          We didn't start from scratch <br>
+          <span class="back-to-overview">
+            <a href="#process-overview">(back to process overview)</a>
+          </span>
+        </h3>
+        <p>Fortunately, a previous team had already started to explore what a real-time air quality user interface might
+          look like. Here's a look at some of the prior art we started with.</p>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="text-image">
+                <div class="text d-none d-md-initial">
+                  <p>Air quality data and its health impacts are incredibly complicated. There isn't necessarily a
+                    correlation between different pollutant concentrations and they depend on environmental factors.
+                    Additionally, the impacts are unsurprisingly time dependent.</p>
+                  <div class="d-none d-xl-initial">
+                    <h6>What they got right:</h6>
+                    <ul>
+                      <li>They draw attention to the current value to build familiarity with units.</li>
+                      <li>The average line and percent difference on the graph build intuition for the severity of
+                        different values.</li>
+                      <li>The graph indicates the trend of the data which can aid decision-making.</li>
+                      <li>The sensor location and last updated time provide critical context.</li>
+                    </ul>
+                  </div>
+                  <h6>Concerns:</h6>
+                  <ul>
+                    <li>The cloud is a large focal element but doesn't add any information.</li>
+                    <li>Although it can be backed out from the percent difference, the average value should be displayed
+                      if it's being used as a reference to build intuition.</li>
+                    <li>The wind data is not useful without direction and would be better displayed on a map.</li>
+                    <li>There is no way to learn more about the sources, impacts, health standards, and mitigation
+                      strategies related to this pollutant.</li>
+                  </ul>
+                </div>
+                <img src="../media/air-partners/Copy of s_0_google_style.png">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="text-image">
+                <div class="text d-none d-md-initial">
+                  <p>This view was intended to provide a summary of critical pollutants. By making space for a reduced
+                    set of information on a single page, users might be able to make quicker decisions.</p>
+                  <div class="d-none d-xl-initial">
+                    <h6>What they got right:</h6>
+                    <ul>
+                      <li>Like the view on the previous slide, the units, average line, and percent difference build
+                        intuition. Plus the average value is included here.</li>
+                      <li>The atmospheric data builds confidence in the reliability and immediacy of the air quality
+                        data.
+                      </li>
+                    </ul>
+                  </div>
+                  <h6>Concerns:</h6>
+                  <ul>
+                    <li>Color is always a concern when considering universal design.</li>
+                    <li>The circular shape of the bubbles wastes a lot of space. For mobile UI design, this can be
+                      fatal. You may notice that this mockup is actually wider than the others and has more of a tablet
+                      aspect ratio.</li>
+                    <li>There is no way on this page to tell how the levels are changing.</li>
+                    <li>It's not clear how old the data is and how to refresh it.</li>
+                  </ul>
+                </div>
+                <img src="../media/air-partners/Copy of s_0_circle_grid.png">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="text-image">
+                <div class="text d-none d-md-initial">
+                  <p>This view takes another stab at a summary. As you can see, it takes a text-heavy approach rather
+                    than a graphical one, doing away with those large bubbles.</p>
+                  <div class="d-none d-xl-initial">
+                    <h6>What they got right:</h6>
+                    <ul>
+                      <li>The refresh icon is a relatively clear affordance for updating the data and they display the
+                        last updated time.</li>
+                      <li>The current value helps build familiarity with units.</li>
+                    </ul>
+                  </div>
+                  <h6>Concerns:</h6>
+                  <ul>
+                    <li>The percentages once again don't provide enough information. It's not clear what they are
+                      referenced against. Additionally, there is no way to know how serious a certain percentage is.
+                      Lastly, there is no guarantee positive and negative will map the same for each person.</li>
+                    <li>Besides the "Trend" button, there are no affordances showing where to go for more information.
+                    </li>
+                    <li>There is no way on this page to tell how the levels are changing.</li>
+                  </ul>
+                </div>
+                <img src="../media/air-partners/Copy of s_0_all_info.png">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="text-image">
+                <div class="text d-none d-md-initial">
+                  <p>The map views from the prior design work were not very useful and used interpolation of data
+                    between sensor locations which was outside of our technical scope at the onset of this project.
+                    Therefore, we created a much simpler map view shown here for our initial user testing.</p>
+                  <div class="d-none d-xl-initial">
+                    <h6>Features:</h6>
+                    <ul>
+                      <li>Sensor locations</li>
+                      <li>User location</li>
+                      <li>Wind direction</li>
+                      <li>Single color indication of air quality data</li>
+                    </ul>
+                    <h6>Issues:</h6>
+                    <ul>
+                      <li>Poor arrow visibility, especially when yellow</li>
+                      <li>Arrow color doesn't provide much information (and it's ethically questionable to simplify the
+                        data to that level)</li>
+                    </ul>
+                  </div>
+                </div>
+                <img src="../media/air-partners/Map 2.png">
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <h3 id="wizard-of-oz">
+          We didn't start from scratch <br>
+          <span class="back-to-overview">
+            <a href="#process-overview">(back to process overview)</a>
+          </span>
+        </h3>
+        <div class="text-image">
+          <div class="text">
+            <p class="d-none d-md-initial">Wizard of Oz testing is one of the most powerful UX design techniques I've
+              encountered. It doesn't hurt
+              that it's also super fun. The basic idea is that you can rapidly prototype many different things if you
+              use yourself to fill in the gaps in functionality that a complete design would have. In the case of basic
+              UI design, this looks like some paper wireframes that you manipulate as your users touch parts of the
+              screen. However, you can quickly increase the complexity by using sticky notes and clear sheets to mimic
+              things like dropdowns and modals. Since everything is on paper, edits and re-designs can be immediately
+              co-created with users.
+            </p>
+            <p>Before making a bunch of blind changes to our UI, we needed to get input from users. We wanted to utilize
+              these existing wireframes as a platform for understanding how our users would interact with real-time air
+              quality data. We, of course, interviewed them to understand them as people and their conceptions of air
+              quality better before showing them the wireframes. Before heading out, we hypothesized that some users
+              may be overwhelmed by looking at any data. Therefore, we quickly mocked this additional view (just as an
+              experiment) to give clear actionable information without any data.</p>
+            <h6>What we learned:</h6>
+            <ul>
+              <li>Most users were overwhelmed by the views with numbers and graphs; although, some had a desire to
+                learn how to interpret them.</li>
+              <li>Everyone had a strong desire for recommendations about what to do.</li>
+              <li>Many people reacted well to the at-a-glance view but at least one person felt more sure seeing the
+                numbers.</li>
+            </ul>
+          </div>
+          <img src="../media/air-partners/At A Glance - Cloud Danger.png">
+        </div>
+
+        <h3 id="virtual-testing">
+          An unfortunate opportunity to try something new <br>
+          <span class="back-to-overview">
+            <a href="#process-overview">(back to process overview)</a>
+          </span>
+        </h3>
+        <div class="text-image">
+          <div class="text">
+            <p>Due to COVID-19, we were forced to take our remaining planned user interactions virtual. <span
+                class="d-xl-initial"> We have very
+                strong partners in this work in East Boston. Some of the big ones are Mothers Out Front and AIR, Inc,
+                which are both activist organizations fighting the big polluters in their communities. We
+                were fortunate to get the chance to do Zoom calls with members of each organization in which we were
+                able
+                to interview them and then watch (and record) them interacting with the prototype. </span> We quickly
+              converted
+              our designs into a fully-automated standalone UI wireframe in Figma for this remote user testing.
+            </p>
+            <h6>Design insights:</h6>
+            <ul>
+              <li>These more knowledgeable users were still interested in basic information for immediate
+                decision-making, like whether pollutant concentrations are increasing or decreasing.</li>
+              <li>There is a desire to implicate sources with the data to serve activist work. However, the features it
+                would require are beyond our scope and this work is better served by historical data analysis.</li>
+              <li>The app needs to have an educational mindset; in particular, people want to know what levels are
+                healthy and from where pollution is coming.</li>
+            </ul>
+            <div class="d-none d-xl-initial">
+              <p>Virtual user testing was really interesting and it's something I'm interested in continuing to explore!
+                Althouogh we were skeptical of it at first, there are always silver linings. Here are some of the pros
+                and
+                cons from our experience.</p>
+              <h6>Pros:</h6>
+              <ul>
+                <li>Screen-sharing eliminates having to watch over a user's shoulder or observe the prototype upside
+                  down
+                  from across a table.</li>
+                <li>Recording is easy and not a weird ask. Plus, people can easily turn video sharing off.</li>
+                <li>It's way easier to schedule virtual testing.</li>
+              </ul>
+              <h6>Cons:</h6>
+              <ul>
+                <li>It's not accessible to people technological limitations (wifi speed, computer access, comfort using
+                  desktop and web applications).</li>
+                <li>It's harder to reach people outside your existing network. In person introductions are much more
+                  effective.</li>
+                <li>It's harder to get a user group together and bang out back-to-back tests.</li>
+              </ul>
+            </div>
+          </div>
+          <img src="../media/air-partners/automated-wireframe.gif">
+        </div>
+
+        <h3 id="personas-and-requirements">
+          Nailing down requirements <br>
+          <span class="back-to-overview">
+            <a href="#process-overview">(back to process overview)</a>
+          </span>
+        </h3>
+        <p>After all this user testing, it was critical to develop personas to solidify the user stories we heard. From
+          these three personas, we were able to develop a set of requirements for a first release of our real-time air
+          quality data platform:</p>
+        <ul>
+          <li>An at-a-glance view with, at minimum, information on how levels have been changing in a recent time period
+            (exact time period to be determined from further data analysis) and
+            recommendations for mitigating exposure to pollutants</li>
+          <li>Obvious communication of most recent data timestamp and method for manually refreshing the view</li>
+          <li>Current pollutant levels compared to one or a combination of the following: local averages, health
+            standards, understandable comparisons (e.g. a forest).</li>
+          <li>A map view which incorporates wind direction and ideally incorporates the at-a-glance view</li>
+          <li>Clear ways to access educational information about sources, impacts, and health standards</li>
+        </ul>
+
+        <div id="personas" class="card-deck-xl">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">DREW</h5>
+              <p class="card-text">Drew has kids and, unsurprisingly, constantly has to make decisions to keep them
+                healthy and happy. Drew says they air quality most in the summer, when their kids want to play outside
+                every day. Drew knows air quality is a problem, like everyone in East Boston, but they don't know much
+                about air quality and don't have the time or desire to get into it. They just want to actionable
+                information to help them make decisions.</p>
+              <h6>Key needs:</h6>
+              <ul>
+                <li>Comparison of current data to understandable references.</li>
+                <li>Clear and actionable recommendations.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">TAYLOR</h5>
+              <p class="card-text">Like Drew, Taylor probably has kids although they might just work with them as a
+                teacher or coach. Taylor wants to dive deeper into the air quality problem in East Boston but doesn't
+                know where to start and can get overwhelmed from just looking at data. Taylor needs recommendations to
+                protect themself and the kids but wants to be confident in the reasoning behind them. However, Taylor
+                feels confident knowing that, regardless of how well they understand the data, at least they can avoid
+                going outside when levels are increasing or worse than usual.</p>
+              <h6>Key needs:</h6>
+              <ul>
+                <li>Educational aspects about sources, health impacts, and healthy standards</li>
+                <li>Indications of averages and the trend of current levels (is it getting worse or better)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">ALEX</h5>
+              <p class="card-text">Alex loves data and technology. Alex has probably lived in East Boston for a long
+                time and is frustrated by the air quality problem. Alex wants to use the data to understand trends,
+                sources, and implicate big polluters. Alex may have kids but they're probably old enough to be taking
+                care of themselves. Alex is pretty good with technology and picks things up quickly.</p>
+              <h6>Key needs:</h6>
+              <ul>
+                <li>High spatial and temporal density data</li>
+                <li>A map view to relate local data trends to big polluters and wind direction</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div id="redesign" class="section">
+      <div class="content">
+        <h1>Redesign</h1>
+        <p>Since developing our requirements, we've put most design work on hold while we build the back-end to serve
+          data to our application and create a front-end framework which can be easily updated and tested with the first
+          release design. That being said, we have done some preliminary design work to explore potential directions for
+          our redesign.
+        </p>
+
+        <h2>At-A-Glance</h2>
+        <p>In all these at-a-glance mockups, you'll notice the information hierarchy. The recommendations are the first
+          things our users will be looking for, but they take up a lot of space on the page. We could hide the data
+          initially and let users expand it but the purpose of this whole project is to provide an intuitive platform
+          for interacting with the data. Therefore, recommendations are collapsed initially but shown at the top of the
+          screen with an expansion arrow as a clear affordance to access them. Additionally, the last updated time and a
+          refresh button sit at the top of the data section to provide context and control for immediate decision
+          making.</p>
+        <div id="carousel2" class="carousel slide" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel2" data-slide-to="1"></li>
+            <li data-target="#carousel2" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="text-image">
+                <div class="text">
+                  <h4>Option 1: Data Tables</h4>
+                  <ul>
+                    <h6>Pros:</h6>
+                    <li>Provides space for more data to aid decision making</li>
+                    <li>Builds intuition with understandable comparisons</li>
+                  </ul>
+                  <ul>
+                    <h6>Cons:</h6>
+                    <li>Lots of information to process in the form of raw numbers, may be intimidating</li>
+                    <li>No quick visual indication of current conditions relative to a baseline</li>
+                  </ul>
+                </div>
+                <img src="../media/air-partners/12 - At-a-glance Data Tables.png">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="text-image">
+                <div class="text">
+                  <h4>Option 2: Horizontal Bars</h4>
+                  <ul>
+                    <h6>Pros:</h6>
+                    <li>Graphical representation gives a quick indication of current conditions</li>
+                  </ul>
+                  <ul>
+                    <h6>Cons:</h6>
+                    <li>Linear representation of concentration levels doesn't accurately represent health impacts</li>
+                    <li>Only two comparisons can be made (upper and lower bounds of bars)</li>
+                    <li>Some text is repetitive for each pollutant</li>
+                  </ul>
+                </div>
+                <img src="../media/air-partners/11 - At-a-glance Horizontal Bar.png">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="text-image">
+                <div class="text">
+                  <h4>Option 3: Text Heavy</h4>
+                  <ul>
+                    <h6>Pros:</h6>
+                    <li>Text provides accurate, albeit vague, comparisons</li>
+                    <li>Uses accessible language</li>
+                  </ul>
+                  <ul>
+                    <h6>Cons:</h6>
+                    <li>Not very visually engaging</li>
+                    <li>Some text is repetitive for each pollutant</li>
+                  </ul>
+                </div>
+                <img src="../media/air-partners/9 - At-a-glance Text Heavy.png">
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <h2>Map View</h2>
+        <div class="text-image">
+          <div class="text">
+            <p>Our map view has actually made it all the way to implementation and you can see a screenshot of our
+              mobile app here. The overall design isn't final; there are a lot of details to iron out. But this is a
+              looks-like feels-like prototype for testing our backend.</p>
+            <h6>Features:</h6>
+            <ul>
+              <li>Easily visible wind direction indicators</li>
+              <li>At-a-glance (prior design for testing) overlay on sensor location click</li>
+              <li>User location (not displayed here since I was in CA when I took the screenshot)</li>
+            </ul>
+          </div>
+          <img src="../media/air-partners/app-map.png">
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="../dist/scripts/bootstrap.min.js"></script>
+  <script src="../dist/scripts/headerScroll.prod.js"></script>
+</body>
+
+</html>

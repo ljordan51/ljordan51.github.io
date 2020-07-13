@@ -14,6 +14,14 @@
   margin-bottom: 15px;
 }
 
+.container-xxl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media screen and (min-width: 576px) {
   .d-sm-initial {
     display: initial !important;
@@ -50,6 +58,12 @@
     margin-right: 15px;
     margin-bottom: 0;
     margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container-xxl {
+    max-width: 1400px;
   }
 }
 

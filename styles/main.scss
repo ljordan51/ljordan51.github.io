@@ -9,6 +9,7 @@ $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
+$xxl: 1400px;
 
 // Utils
 .no-border {
@@ -26,6 +27,14 @@ $xl: 1200px;
 // Bootstrap supplements
 .card-deck-xl .card {
   margin-bottom: 15px;
+}
+
+.container-xxl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media screen and (min-width:$sm) {
@@ -64,6 +73,12 @@ $xl: 1200px;
     margin-right: 15px;
     margin-bottom: 0;
     margin-left: 15px;
+  }
+}
+
+@media screen and (min-width:$xxl) {
+  .container-xxl {
+    max-width: $xxl;
   }
 }
 
